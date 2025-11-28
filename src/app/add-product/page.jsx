@@ -24,7 +24,7 @@ const AddProduct = () => {
     setMessage("");
 
     try {
-      const res = await fetch("https://gadget-store-server-fawn.vercel.app/api/products", {
+      const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/products`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(form),

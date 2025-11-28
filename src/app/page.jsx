@@ -4,7 +4,7 @@ import LaptopCard from "@/components/LaptopCard";
 //  laptops fetch from backend
 async function getLaptops() {
   try {
-    const res = await fetch("https://gadget-store-server-fawn.vercel.app/api/products", {
+    const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/products`, {
       cache: "no-store", 
     });
     if (!res.ok) throw new Error("Failed to fetch laptops");
@@ -35,6 +35,7 @@ export default async function Home() {
           </div>
         )}
       </section>
+      
 
       <section className="py-20 bg-gray-50">
   <div className="max-w-6xl mx-auto px-6 text-center">

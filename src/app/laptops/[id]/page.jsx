@@ -11,7 +11,7 @@ export default function LaptopDetailsPage() {
   useEffect(() => {
     const fetchLaptop = async () => {
       try {
-        const res = await fetch(`https://gadget-store-server-fawn.vercel.app/api/products/${id}`);
+        const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/products/${id}`);
         const data = await res.json();
         setLaptop(data);
       } catch (err) {

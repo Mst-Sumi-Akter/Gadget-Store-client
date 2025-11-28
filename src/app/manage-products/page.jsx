@@ -10,7 +10,7 @@ const ManageProducts = () => {
   // Fetch products
   const fetchProducts = async () => {
     try {
-      const res = await fetch("https://gadget-store-server-fawn.vercel.app/api/products");
+      const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/products`);
       const data = await res.json();
       setProducts(data);
     } catch (err) {
@@ -28,7 +28,7 @@ const ManageProducts = () => {
     if (!confirm("Are you sure you want to delete this product?")) return;
 
     try {
-      const res = await fetch(`https://gadget-store-server-fawn.vercel.app/api/products/${id}`, {
+      const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/products/${id}`, {
         method: "DELETE",
       });
 
