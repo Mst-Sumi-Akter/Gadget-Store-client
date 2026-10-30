@@ -1,8 +1,4 @@
-
-Project Name: Gadget Store 
-
-
-
+# Project Name: Gadget Store 
 
 
 
